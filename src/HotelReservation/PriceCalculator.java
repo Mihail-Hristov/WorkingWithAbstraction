@@ -6,15 +6,15 @@ public class PriceCalculator {
     private Season season;
     private DiscountType discountType;
 
+    public PriceCalculator(double pricePerDay, int days, DiscountType discountType, Season season) {
+        this.pricePerDay = pricePerDay;
+        this.days = days;
+        this.season = season;
+        this.discountType = discountType;
+    }
 
-    public static double priceCalculator(double pricePerDay, int days, String season, DiscountType discountType) {
-        double basicPrice = pricePerDay * days;
-        int multiply = season.toUpperCase().getValue();
-        double priceBeforeDiscount = basicPrice * multiply;
-        double discount = discountType.getDiscount() / 100.0;
-        double discountedAmount = priceBeforeDiscount * discount;
-
-        return priceBeforeDiscount - discountedAmount;
+    public double calculate() {
+        return this.days * this.pricePerDay * (1 - this.discountType.getDiscount() / 100.0) * this.season.getValue();
     }
 
 

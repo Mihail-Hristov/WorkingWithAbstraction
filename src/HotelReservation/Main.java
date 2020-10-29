@@ -10,16 +10,15 @@ public class Main {
 
         double price = Double.parseDouble(input[0]);
         int days = Integer.parseInt(input[1]);
-        String season = input[2];
-        String discountType = input[3];
+        String season = input[2].toUpperCase();
+        String discountType = input[3].toUpperCase();
 
-        Season season1 = new Season(season.toUpperCase());
+        DiscountType discountType1 = DiscountType.valueOf(discountType);
+        Season season1 = Season.valueOf(season);
 
-        double finalPrice = PriceCalculator.priceCalculator(price, days, season1, discountType);
-
-        System.out.println(String.format("%.2f", finalPrice));
-
-
+        PriceCalculator priceCalculator = new PriceCalculator(price, days, discountType1, season1);
+        double result = priceCalculator.calculate();
+        System.out.println(String.format("%.2f", result));
 
     }
 }
