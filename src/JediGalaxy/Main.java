@@ -1,8 +1,4 @@
-package jediGalaxy;
-
-import JediGalaxy.Evil;
-import JediGalaxy.Galaxy;
-import JediGalaxy.Ivo;
+package JediGalaxy;
 
 import java.util.Arrays;
 import java.util.Scanner;
