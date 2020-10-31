@@ -1,6 +1,6 @@
 package CarSuit;
 
-public enum Deck {
+public enum Suits {
     CLUBS,
     DIAMONDS,
     HEARTS,

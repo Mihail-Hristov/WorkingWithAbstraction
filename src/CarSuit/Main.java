@@ -8,8 +8,8 @@ public class Main {
 
         String input = scanner.nextLine();
         System.out.println(input + ":");
-        for (Deck deck : Deck.values()) {
-            System.out.println(String.format("Ordinal value: %d; Name value: %s", deck.ordinal(), deck.name()));
+        for (Suits suits : Suits.values()) {
+            System.out.println(String.format("Ordinal value: %d; Name value: %s", suits.ordinal(), suits.name()));
         }
     }
 }
