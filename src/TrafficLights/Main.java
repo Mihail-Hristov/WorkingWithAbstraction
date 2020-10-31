@@ -9,15 +9,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        List<String> tokens = Arrays.stream(scanner.nextLine().split("\\s+"))
-                .collect(Collectors.toList());
+        String[] tokens = scanner.nextLine().split("\\s+");
         int numberOfTimes = Integer.parseInt(scanner.nextLine());
 
+        TrafficLight trafficLight = new TrafficLight(tokens);
+
         for (int i = 0; i < numberOfTimes; i++) {
-            for (int j = 0; j < tokens.size(); j++) {
-                tokens.set(j, TrafficLight.valueOf(tokens.get(j)).getNextColor());
-            }
-            System.out.println(String.join(" ", tokens));
+            trafficLight.update();
+            System.out.println(trafficLight);
         }
     }
 }

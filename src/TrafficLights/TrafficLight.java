@@ -1,17 +1,26 @@
 package TrafficLights;
 
-public enum TrafficLight {
-    RED("GREEN"),
-    GREEN("YELLOW"),
-    YELLOW("RED");
+import java.util.ArrayList;
+import java.util.List;
 
-    private String nextColor;
+public class TrafficLight {
+    private List<String> lights;
 
-    TrafficLight(String nextColor) {
-        this.nextColor = nextColor;
+    public TrafficLight(String[] arr) {
+        this.lights = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            this.lights.add(i, Light.valueOf(arr[i]).name());
+        }
     }
 
-    public String getNextColor() {
-        return this.nextColor;
+    public void update() {
+        for (int i = 0; i < this.lights.size(); i++) {
+            lights.set(i, Light.valueOf(lights.get(i)).getNextColor());
+        }
+    }
+
+    @Override
+    public String toString() {
+        return String.join(" ", this.lights);
     }
 }
