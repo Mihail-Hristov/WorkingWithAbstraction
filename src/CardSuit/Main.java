@@ -1,4 +1,4 @@
-package CarSuit;
+package CardSuit;
 
 import java.util.Scanner;
 

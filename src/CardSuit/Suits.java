@@ -1,4 +1,4 @@
-package CarSuit;
+package CardSuit;
 
 public enum Suits {
     CLUBS,
